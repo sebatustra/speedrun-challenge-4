@@ -25,7 +25,7 @@ contract DiceGame {
         bytes32 prevHash = blockhash(block.number - 1);
         bytes32 hash = keccak256(abi.encodePacked(prevHash, address(this), nonce));
         uint256 roll = uint256(hash) % 16;
-
+        console.log("roll in the diceGame contract", roll);
         console.log('\t',"   Dice Game Roll:",roll);
 
         nonce++;
